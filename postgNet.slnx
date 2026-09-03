@@ -2,5 +2,9 @@
   <Folder Name="/samples/">
     <Project Path="samples/PostgNet.SmokeTest/PostgNet.SmokeTest.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PostgNet.IntegrationTests/PostgNet.IntegrationTests.csproj" />
+    <Project Path="tests/PostgNet.Tests/PostgNet.Tests.csproj" />
+  </Folder>
   <Project Path="postgNet/postgNet.csproj" />
 </Solution>
