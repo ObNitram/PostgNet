@@ -3,14 +3,13 @@
 const string defaultConnectionString =
     "Host=localhost;Port=5432;Database=postgnet;Username=postgres;Password=postgres";
 
-var connectionString = Environment.GetEnvironmentVariable("POSTGNET_CONNECTION_STRING")
-    ?? defaultConnectionString;
+var connectionString =
+    Environment.GetEnvironmentVariable("POSTGNET_CONNECTION_STRING") ?? defaultConnectionString;
 
 try
 {
     await using var dataSource = PostgNetDataSource.Create(connectionString);
-    await using var command = dataSource.CreateCommand(
-        "SELECT current_database(), version()");
+    await using var command = dataSource.CreateCommand("SELECT current_database(), version()");
     await using var reader = await command.ExecuteReaderAsync();
 
     await reader.ReadAsync();

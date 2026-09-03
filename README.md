@@ -43,3 +43,19 @@ dotnet run --project samples/PostgNet.SmokeTest
 
 Le programme utilise les paramètres Docker par défaut. Une autre connexion peut
 être testée en définissant la variable `POSTGNET_CONNECTION_STRING`.
+
+## Formatage avec CSharpier
+
+CSharpier est installé comme outil .NET local. Après avoir cloné le dépôt,
+restaurez les outils avec :
+
+```shell
+dotnet tool restore
+```
+
+Pour formater le code et vérifier le formatage sans modifier les fichiers :
+
+```shell
+dotnet csharpier format .
+dotnet csharpier check .
+```
